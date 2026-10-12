@@ -1,0 +1,21 @@
+{
+  "name": "ref-vault",
+  "version": "0.3.0",
+  "private": true,
+  "description": "Локальная библиотека визуальных референсов: изображения, видео, теги и коллекции.",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env server.js",
+    "start": "node --env-file-if-exists=.env server.js",
+    "browser:install": "playwright install chromium",
+    "test": "node --test tests/*.test.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "multer": "^2.0.2",
+    "playwright": "^1.55.0"
+  }
+}

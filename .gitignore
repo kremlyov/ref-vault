@@ -1,0 +1,19 @@
+# Dependencies and local configuration
+node_modules/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+__pycache__/
+*.pyc
+
+# Personal library, exports, queue, backups and generated files
+/data/
+/inbox/
+/design/
+/output/
+/sites/
+
+# Optional locally installed font; redistribution license is not included
+/public/assets/ys-text-web.ttf

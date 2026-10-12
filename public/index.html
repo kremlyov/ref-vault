@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>REF/VAULT</title><link rel="stylesheet" href="/styles.css"></head><body>
+<main>
+<section class="hero" aria-label="Добавить референс">
+<form id="capture" class="capture"><input id="url" type="url" aria-label="Ссылка на работу" placeholder="dribbble, pinterest, behance, are.na, instagram" autocomplete="off"><button id="inspect" class="primary" hidden>Go</button></form>
+<button id="addFile" class="addFile" type="button" aria-label="Добавить файл" title="Добавить файл"><img src="/assets/plus.svg" alt=""></button>
+<div id="preview" hidden></div>
+<form id="upload" class="manualEditor" hidden>
+<div class="filePicker"><label for="uploadFile" class="primary pill">Добавить файл</label><input id="uploadFile" name="file" type="file" accept="image/*,video/*" required><span id="fileName">file.png</span></div>
+<div class="fieldGroup"><input id="uploadTags" name="tags" placeholder="Теги" aria-label="Теги через запятую"><div class="suggestions" data-suggestions="uploadTags" data-kind="tags"></div></div>
+<div class="fieldGroup"><input id="uploadCollection" name="collection" placeholder="Коллекция" aria-label="Коллекция"><div class="suggestions" data-suggestions="uploadCollection" data-kind="collection"></div></div>
+<textarea name="note" placeholder="Нравится" aria-label="Заметка"></textarea>
+<div class="actions"><button class="primary" type="submit">Сохранить</button><button id="uploadCancel" type="button">Отмена</button></div>
+</form>
+<p id="message" role="status" hidden></p>
+</section>
+<section class="inboxSection" hidden><div class="head"><div><small>02 · INBOX</small><h2>С телефона</h2></div><button id="refreshInbox" type="button">Обновить</button></div><p>Отправь ссылку в REF-VAULT Inbox на iCloud Drive. Импорт начнётся, когда Mac синхронизирует файл и сервер будет запущен.</p><div id="inboxStatus"></div><details><summary>Папка очереди и настройка iPhone</summary><p id="inboxPath"></p><a href="/shortcut-setup.html" target="_blank">Настроить команду на iPhone ↗</a></details><div id="inboxJobs"></div></section>
+<section class="library" aria-label="Библиотека референсов"><div class="filters">
+<label class="searchField"><img src="/assets/search.svg" alt=""><input id="search" aria-label="Поиск по библиотеке" autocomplete="off"></label>
+<select id="tagFilter" aria-label="Фильтр по тегу"><option value="">Все теги</option></select>
+<select id="collectionFilter" aria-label="Фильтр по коллекции"><option value="">Все коллекции</option></select>
+<button class="typeFilter" data-type="image" aria-pressed="false">Картинки</button><button class="typeFilter" data-type="video" aria-pressed="false">Видео</button>
+<button id="resetFilters" type="button" aria-label="Сбросить фильтры" title="Сбросить фильтры" hidden><img src="/assets/reset.svg" alt=""></button>
+<div id="selectionControls"><button id="stats" type="button" role="checkbox" aria-checked="false" aria-live="polite"></button><button id="deleteSelected" type="button" aria-label="Удалить выбранные рефы" title="Удалить выбранные рефы" hidden><img src="/assets/bulk-trash.svg" width="24" height="24" alt=""></button><button id="editSelected" type="button" aria-label="Изменить выбранные рефы" title="Изменить выбранные рефы" hidden><img src="/assets/bulk-edit.svg" width="24" height="24" alt=""></button></div><select id="type" hidden><option value="">Все медиа</option><option value="image">Изображения</option><option value="video">Видео</option></select>
+</div><div id="grid"></div><p id="empty" hidden>Пока пусто</p></section>
+</main>
+<dialog id="viewer" aria-label="Просмотр работы"><button id="viewerClose" type="button" aria-label="Закрыть"><img src="/assets/close.svg" alt=""></button><div id="viewerContent"></div><aside id="viewerDetails"></aside></dialog>
+<dialog id="bulkEditor" aria-label="Изменить выбранные рефы"><form id="bulkForm">
+<div class="fieldGroup"><input id="bulkTags" placeholder="Добавить всем теги" aria-label="Добавить всем теги через запятую" autocomplete="off"><div class="suggestions" data-suggestions="bulkTags" data-kind="tags"></div></div>
+<div class="fieldGroup"><input id="bulkCollection" placeholder="Перенести всех в коллекцию" aria-label="Перенести всех в коллекцию" autocomplete="off"><div class="suggestions" data-suggestions="bulkCollection" data-kind="collection"></div></div>
+<div class="actions"><button id="bulkSave" type="submit" class="primary">Сохранить</button><button id="bulkCancel" type="button">Отмена</button></div><p id="bulkError" role="status" hidden></p>
+</form></dialog>
+<script src="/app.js"></script></body></html>
